@@ -1,0 +1,57 @@
+* {
+	margin:0;
+	padding:0;
+}
+body{
+	background:rgb(125, 125, 125);
+}
+.webFont{
+	font-family:'HelveticaNeuea3ebfef5718da7';
+}
+button{
+	font-family:'HelveticaNeuea3ebfef5718da7';
+	font-size:1rem;
+	width:60px;
+	margin:0;
+	float:left;
+	height:100px;
+	/* border-style:solid;
+	border-color:transparent black black transparentblack; */
+	border:none;
+	transition: all 0.25s ease-in;
+}
+button:hover{
+	background-color:rgb(200, 200, 200);
+}
+/* button:active{
+	background-color:;
+} */
+.calbody{
+
+}
+#js-add{
+	height:200px;
+	float:right;
+}
+.displayBar{
+	border:1px black solid;
+	width:360px;
+	margin:0 auto;
+	font-size:2rem;
+	background:rgb(200, 200, 200);
+}
+.display, .enter{
+	text-align:right;
+	width:360px;
+}
+.btnSets{
+	margin:0 auto;
+	height:400px;
+	width:360px;
+}
+#js-add, #js-minus, #js-mul, #js-div, #js-result{
+	background:rgb(251, 153, 4);
+}
+#js-add:hover, #js-minus:hover, #js-mul:hover, #js-div:hover, #js-result:hover{
+	background-color:rgb(251, 181, 73);
+}
