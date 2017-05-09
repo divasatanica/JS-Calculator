@@ -6,6 +6,7 @@ var bufNum3 = 0;
 var result = 0;
 var numBtn = document.getElementsByClassName("numButton");
 var enterBar = document.getElementById("js-enter");
+var displayBar = document.getElementById("js-display");
 var negative = document.getElementById("js-negative");
 var clear1bit = document.getElementById("js-clear1bit");
 var clearEnter = document.getElementById("js-clearEnter");
@@ -31,7 +32,7 @@ function equalF(){
 		result = bufNum3 / bufNum1;
 	}
 	bufNum3 = result;
-	enterBar.innerHTML = String(result);
+	displayBar.innerHTML = String(result);
 	bufNum1 = 0;
 	minusflag = false;
 	mulflag = false;
@@ -42,7 +43,7 @@ for(var i = 0;i < numBtn.length;i ++){
 		var e = window.event || e;
 		var target = e.target || e.srcElement;
 		enterNum.push(target.innerHTML);
-		if(enterBar.innerHTML == "Enter Something"){
+		if(enterBar.innerHTML == "0"){
 				enterBar.innerHTML = '';
 			}	
 		enterBar.innerHTML = enterBar.innerHTML + target.innerHTML;
@@ -81,7 +82,7 @@ clear1bit.addEventListener("click", function(){
 //清除当前输入
 clearEnter.addEventListener("click", function(){
 	enterNum.splice(0, enterNum.length);
-	enterBar.innerHTML = 'Enter Something';
+	enterBar.innerHTML = '0';
 	bufNum1 = 0;
 }, false);
 //清除所有输入
@@ -92,7 +93,8 @@ allClear.addEventListener("click", function(){
 	bufNum1 = 0;
 	bufNum3 = 0;
 	result = 0;
-	enterBar.innerHTML = 'Enter Something';
+	enterBar.innerHTML = '0';
+	displayBar.innerHTML = '0';
 }, false);
 //加减乘除
 equal.addEventListener("click", equalF, false);
@@ -102,13 +104,13 @@ add.addEventListener("click", function(){
 	if(bufNum3 !== 0){
 		bufNum3 = bufNum3 + bufNum1;
 		enterNum.splice(0, enterNum.length);
-		enterBar.innerHTML = 'Enter Something';
+		enterBar.innerHTML = '0';
 		bufNum1 = 0;
 	}
 	if(enterNum.length !== 0){
 		bufNum3 = bufNum1;
 		enterNum.splice(0, enterNum.length);
-		enterBar.innerHTML = 'Enter Something';
+		enterBar.innerHTML = '0';
 		bufNum1 = 0;
 	}
 }, false);
@@ -119,13 +121,13 @@ minus.addEventListener("click", function(){
 	if(bufNum3 !== 0){
 		bufNum3 = bufNum3 - bufNum1;
 		enterNum.splice(0, enterNum.length);
-		enterBar.innerHTML = 'Enter Something';
+		enterBar.innerHTML = '0';
 		bufNum1 = 0;
 	}
 	if(enterNum.length !== 0){
 		bufNum3 = bufNum1;
 		enterNum.splice(0, enterNum.length);
-		enterBar.innerHTML = 'Enter Something';
+		enterBar.innerHTML = '0';
 		bufNum1 = 0;
 	}
 }, false);
@@ -135,7 +137,7 @@ mul.addEventListener("click", function(){
 	minusflag = false;
 	mulflag = true;
 	enterNum.splice(0, enterNum.length);
-	enterBar.innerHTML = 'Enter Something';
+	enterBar.innerHTML = '0';
 	if(bufNum3 == 0){
 		bufNum3 = 1;
 	}
@@ -150,7 +152,7 @@ div.addEventListener("click", function(){
 	minusflag = true;
 	mulflag = true;
 	enterNum.splice(0, enterNum.length);
-	enterBar.innerHTML = 'Enter Something';
+	enterBar.innerHTML = '0';
 	if(bufNum3 == 0){
 		bufNum3 = 1;
 		bufNum3 = bufNum1 / bufNum3;
