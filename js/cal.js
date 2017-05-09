@@ -36,9 +36,9 @@ function equalF(){
 	minusflag = false;
 	mulflag = false;
 }
-//对四个包含了数字键的div进行事件托管
+//对四个包含了数字键的div进行事件委托
 for(var i = 0;i < numBtn.length;i ++){
-	numBtn[i].addEventListener("click", function(){
+	numBtn[i].addEventListener("click", function(e){//这里的事件委托函数必须把事件对象作为参数传进去以兼容FireFox和IE
 		var e = window.event || e;
 		var target = e.target || e.srcElement;
 		enterNum.push(target.innerHTML);
